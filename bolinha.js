@@ -7,7 +7,7 @@ let raio = dBolinha / 2;
 //variáveis da velocidade da bolinha
 let veloXBolinha = 7;
 let veloYBolinha = 7;
-let colidiu = false;
+
 
 //Funções da Bolinha
 

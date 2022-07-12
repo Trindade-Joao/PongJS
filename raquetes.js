@@ -9,11 +9,8 @@ let hRaquete = 80;
 //variáveis raquete oponente
 let xRaqueteOponente = 570;
 let yRaqueteOponente = 180;
-let chanceDeErrar = 0
 let veloYOponente;
-let geraRandom = false;
-let valorRandom1;
-let valorRandom2;
+
 
 //Funções das raquetes
 
@@ -35,8 +32,11 @@ function movimentaMinhaRaquete() {
 }
 
 function movimentaRaqueteOponente() {
+    
     veloYOponente = yBolinha - yRaqueteOponente - 75 / 2 - 50;
-    yRaqueteOponente += veloYOponente + chanceDeErrar;
-    //calculaChanceDeErrar();
+    yRaqueteOponente = yRaqueteOponente + veloYOponente + chanceDeErrar;
+    calculaChanceDeErrar(valorRandom1, valorRandom2);
+
+   
 
 }

@@ -1,6 +1,8 @@
 function setup() {
     createCanvas(600, 400);
     somTrilha.loop();
+    
+    
 }
 
 function draw() {
@@ -21,5 +23,13 @@ function draw() {
     somaPontos(xFundoMesaP1, yFudoMesa);
     somaPontos(xFundoMesaP2, yFudoMesa);
     mostraPlacar();
+    
+    geradorRandom();
+    console.log(chanceDeErrar);
+ 
+
+    
+
+ 
     
 }

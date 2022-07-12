@@ -4,6 +4,12 @@
 let pontosP1 = 0;
 let pontosP2 = 0;
 
+//variáveis para tornar o erro do adversário aleatório
+let geraRandom = false;
+let valorRandom1 = 0; 
+let valorRandom2 = 0;
+let chanceDeErrar = 0;
+
 //Funções Placar
 
 function mostraPlacar() {
@@ -25,30 +31,40 @@ function somaPontos(x, y) {  //Alterei essa função utilizando a colisão com a
     tocouLinha = collideRectCircle(x, y, larLinha, comLinha, xBolinha, yBolinha, dBolinha);
     if (tocouLinha) {
         veloXBolinha *= -1;
+        
         somPonto.play();
         if (xBolinha > 300) {
+            
             pontosP1 += 1;
             xBolinha -= 20;
         } else {
+            
             pontosP2 += 1;
             xBolinha += 20;
-            geraRandom = true;
-            valorRandom1 = geradorRandom(50, 100);
-            valorRandom2 = geradorRandom(30, 80);
-
+           
 
         }
     }
 }
 
-//Função fator de erro do oponente
+//Função fator de erro aleatório do oponente
 
 
-function geradorRandom(min, max) {
+function geradorRandom() {
+   
     if (geraRandom) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        geraRandom = false;
-        return Math.floor(Math.random() * (max - min)) + min;
+        valorRandom1 = Math.round(Math.random() * (90 - 40) + 40);
+        valorRandom2 = Math.round(Math.random() * (70 - 30) + 30);
+        geraRandom = false
+        
     }
+}
+
+function calculaChanceDeErrar(x, y){
+    if(pontosP1 < pontosP2){
+        chanceDeErrar = parseInt(x + y);
+    }else{
+        chanceDeErrar = parseInt(Math.round(x + y / 2));
+    }
+
 }
