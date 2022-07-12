@@ -8,6 +8,3 @@ Para testar o jogo é necessária a biblioteca **P5js**
 
 
 > Status do Desenvolvimento
-
-
- 
