@@ -1,35 +1,25 @@
+tela = 3;
+
 function setup() {
     createCanvas(600, 400);
     somTrilha.loop();
     
     
+    
 }
 
 function draw() {
-    mesa();
-
-    mostraBolinha();
-    movimentaBolinha();    
-
-    mostraRaquete(xRaquete, yRaquete);
-    mostraRaquete(xRaqueteOponente, yRaqueteOponente);
-    movimentaMinhaRaquete();
-    movimentaRaqueteOponente();
-
-    verificaColisaoBorda();
-    colisaoRaqueteBiblioteca(xRaquete, yRaquete);
-    colisaoRaqueteBiblioteca(xRaqueteOponente, yRaqueteOponente);
-
-    somaPontos(xFundoMesaP1, yFudoMesa);
-    somaPontos(xFundoMesaP2, yFudoMesa);
-    mostraPlacar();
-    
-    geradorRandom();
-    console.log(chanceDeErrar);
- 
-
-    
-
- 
+    if(tela == 1){
+        telaInicial();
+    } 
+    if(tela == 2){
+        TelaPrincipal();
+    }
+    if(tela == 3){
+        telaFinal(imgVencedor);
+    }
+    if(tela == 4){
+        telaFinal(imgPerdedor);
+    }
     
 }

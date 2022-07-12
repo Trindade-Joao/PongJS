@@ -68,3 +68,12 @@ function calculaChanceDeErrar(x, y){
     }
 
 }
+
+function fimDeJogo(){
+    if(pontosP1 >= 5){
+        tela = 3;
+    }
+    if(pontosP2 >= 5){
+        tela = 4;
+    }
+}
